@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disc Golf Score Tracker</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>⛳ Disc Golf Sonntagsrunde</h1>
+    <p>von Philipp</p>
+    <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+      <button onclick="exportGameData()" title="Download all data as JSON">📥 Export Data</button>
+      <label style="cursor: pointer; color: #e0e0e0;">
+        📤 Import Data
+        <input type="file" id="import-file-input" accept=".json" style="display: none;">
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <!-- Round Setup Section -->
+    <section id="round-setup">
+      <h2>Neue Runde</h2>
+      <div class="form-group">
+        <label for="round-date">Datum:</label>
+        <input type="date" id="round-date">
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="num-players">Spieler (1-10):</label>
+          <input type="number" id="num-players" min="1" max="10" value="3">
+        </div>
+        <div class="form-group">
+          <label for="num-courses">Anzahl der Runden (1-30):</label>
+          <input type="number" id="num-courses" min="1" max="30" value="18">
+        </div>
+      </div>
+
+      <button onclick="setupPlayers()">Spieler erstellen</button>
+    </section>
+
+    <!-- Players Setup Section -->
+    <section id="players-setup" style="display:none;">
+      <h2>Spieler Name:</h2>
+      <div id="players-input"></div>
+      <button onclick="setupCourses()">Kurseinstellugng</button>
+    </section>
+
+    <!-- Course Selection Section -->
+    <section id="course-selection" style="display:none;">
+      <h2>Kurseinstellugng</h2>
+      <div class="button-group">
+        <button onclick="showNewCourseSetup()" style="flex: 1;">neuer Krus</button>
+        <button onclick="showLoadCourseSetup()" style="flex: 1;">Kurs laden...</button>
+      </div>
+    </section>
+
+    <!-- New Courses Setup Section -->
+    <section id="courses-setup" style="display:none;">
+      <h2>neue Kursdetails</h2>
+      <div id="courses-input"></div>
+      <div class="button-group">
+        <button onclick="goBackToCourseSelection()">← Zurück</button>
+        <button onclick="startRound()">Starte Runde...</button>
+      </div>
+    </section>
+
+    <!-- Load Course Section -->
+    <section id="load-course" style="display:none;">
+      <h2>Kurs laden...</h2>
+      <div class="form-group">
+        <label for="course-file">Auswahl:</label>
+        <input type="file" id="course-file" accept=".json">
+      </div>
+      <div id="loaded-course-preview"></div>
+      <div class="button-group">
+        <button onclick="goBackToCourseSelection()">← Zurück</button>
+        <button onclick="loadCourseFile()" id="load-btn" disabled>Kurs laden</button>
+      </div>
+    </section>
+
+    <!-- Save Course Section -->
+    <section id="save-course" style="display:none;">
+      <h2>Kurs speichern</h2>
+      <div class="form-group">
+        <label for="course-name">Kurs Name:</label>
+        <input type="text" id="course-name" placeholder="geb mir einen Namen...">
+      </div>
+      <div class="button-group">
+        <button onclick="cancelSaveCourse()">Abbruch</button>
+        <button onclick="saveCourseFile()">Kurs speichern</button>
+      </div>
+    </section>
+
+    <!-- Scoring Section -->
+    <section id="scoring-section" style="display:none;">
+      <h2>Bahn: <span id="current-course">1</span> von <span id="total-courses">18</span></h2>
+      <div id="course-info"></div>
+      <div id="scoring-table"></div>
+      <div class="button-group">
+        <button onclick="previousCourse()">← Letzte</button>
+        <button onclick="nextCourse()" id="next-btn">Nächste →</button>
+      </div>
+    </section>
+
+    <!-- Halftime Standing Section -->
+    <section id="halftime-section" style="display:none;">
+      <h2>⏸️ Halbzeit</h2>
+      <table id="halftime-standings"></table>
+      <button onclick="continueRound()">Weiter geht's</button>
+    </section>
+
+    <!-- Final Results Section -->
+    <section id="results-section" style="display:none;">
+      <h2>🏆 Endstand</h2>
+      <div id="final-standings"></div>
+      <div class="button-group">
+        <button onclick="showGameHistory()" style="flex: 1;">📊 View History</button>
+        <button onclick="resetTracker()" style="flex: 1;">Neue Runde</button>
+        <button onclick="promptSaveCourse()" style="flex: 1;">Kurs speichern</button>
+      </div>
+    </section>
+
+    <!-- Game History Section -->
+    <section id="history-section" style="display:none;">
+      <h2>📊 Game History</h2>
+      <div id="history-list"></div>
+      <div id="round-details"></div>
+      <button onclick="goBackToResults()">← Back to Results</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Disc Golf Sonntagsrunde | Was soll ich schreiben? </p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

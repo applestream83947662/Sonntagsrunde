@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+header {
+  background-color: rgba(15, 12, 41, 0.95);
+  padding: 2rem 1rem;
+  border-bottom: 2px solid #7c3aed;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  color: #a78bfa;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header div {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+header button {
+  background-color: rgba(124, 58, 237, 0.7);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: 1px solid #a78bfa;
+}
+
+header button:hover {
+  background-color: #a78bfa;
+}
+
+header label {
+  background-color: rgba(124, 58, 237, 0.7);
+  color: #ffffff;
+  border: 1px solid #a78bfa;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+header label:hover {
+  background-color: #a78bfa;
+}
+
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  background-color: rgba(48, 43, 99, 0.6);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid #7c3aed;
+  backdrop-filter: blur(10px);
+}
+
+section h2 {
+  color: #c4b5fd;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+section p {
+  color: #d1d5db;
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #7c3aed;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #a78bfa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+}
+
+footer {
+  background-color: rgba(15, 12, 41, 0.95);
+  color: #9ca3af;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 2px solid #7c3aed;
+  margin-top: 3rem;
+}
+
+a {
+  color: #c4b5fd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #a78bfa;
+  text-decoration: underline;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  color: #c4b5fd;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #7c3aed;
+  border-radius: 4px;
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #a78bfa;
+  box-shadow: 0 0 8px rgba(124, 58, 237, 0.4);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.course-input {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border-left: 3px solid #a78bfa;
+}
+
+.course-input h4 {
+  color: #a78bfa;
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+table th, table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+table th {
+  background-color: rgba(124, 58, 237, 0.2);
+  color: #c4b5fd;
+  font-weight: 600;
+}
+
+table tr:hover {
+  background-color: rgba(124, 58, 237, 0.1);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button-group button {
+  flex: 1;
+}
+
+.vs-par {
+  font-weight: 600;
+  padding: 0.5rem;
+  border-radius: 3px;
+}
+
+.over-par {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+.under-par {
+  color: #10b981;
+  background-color: rgba(16, 185, 129, 0.2);
+}
+
+.even-par {
+  color: #f59e0b;
+  background-color: rgba(245, 158, 11, 0.2);
+}
+
+table th:nth-child(1) {
+  width: 8%;
+}
+
+table th:nth-child(2) {
+  width: 35%;
+}
+
+table th:nth-child(3) {
+  width: 15%;
+}
+
+table th:nth-child(4) {
+  width: 20%;
+}
+
+table th:nth-child(5) {
+  width: 22%;
+}
+
+table td input {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #7c3aed;
+  border-radius: 3px;
+  color: #e0e0e0;
+}
+
+table td input:focus {
+  outline: none;
+  border-color: #a78bfa;
+}

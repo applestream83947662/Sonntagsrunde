@@ -1,0 +1,95 @@
+{
+  "name": "Default18",
+  "courses": [
+    {
+      "number": 1,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 2,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 3,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 4,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 5,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 6,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 7,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 8,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 9,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 10,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 11,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 12,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 13,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 14,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 15,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 16,
+      "par": 4,
+      "length": 50
+    },
+    {
+      "number": 17,
+      "par": 3,
+      "length": 50
+    },
+    {
+      "number": 18,
+      "par": 3,
+      "length": 50
+    }
+  ]
+}
