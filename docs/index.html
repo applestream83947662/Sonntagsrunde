@@ -11,9 +11,9 @@
     <h1>⛳ Disc Golf Sonntagsrunde</h1>
     <p>von Philipp</p>
     <div style="margin-top: 1rem; display: flex; gap: 1rem;">
-      <button onclick="exportGameData()" title="Download all data as JSON">📥 Export Data</button>
+      <button onclick="exportGameData()" title="Download all data as JSON">📥 Export</button>
       <label style="cursor: pointer; color: #e0e0e0;">
-        📤 Import Data
+        📤 Import
         <input type="file" id="import-file-input" accept=".json" style="display: none;">
       </label>
     </div>
@@ -46,14 +46,14 @@
     <section id="players-setup" style="display:none;">
       <h2>Spieler Name:</h2>
       <div id="players-input"></div>
-      <button onclick="setupCourses()">Kurseinstellugng</button>
+      <button onclick="setupCourses()">Kurseinstellung</button>
     </section>
 
     <!-- Course Selection Section -->
     <section id="course-selection" style="display:none;">
-      <h2>Kurseinstellugng</h2>
+      <h2>Kurseinstellung</h2>
       <div class="button-group">
-        <button onclick="showNewCourseSetup()" style="flex: 1;">neuer Krus</button>
+        <button onclick="showNewCourseSetup()" style="flex: 1;">neuer Kurs</button>
         <button onclick="showLoadCourseSetup()" style="flex: 1;">Kurs laden...</button>
       </div>
     </section>
@@ -118,7 +118,7 @@
       <h2>🏆 Endstand</h2>
       <div id="final-standings"></div>
       <div class="button-group">
-        <button onclick="showGameHistory()" style="flex: 1;">📊 View History</button>
+        <button onclick="showGameHistory()" style="flex: 1;">📊 Hisorie...</button>
         <button onclick="resetTracker()" style="flex: 1;">Neue Runde</button>
         <button onclick="promptSaveCourse()" style="flex: 1;">Kurs speichern</button>
       </div>
@@ -126,10 +126,10 @@
 
     <!-- Game History Section -->
     <section id="history-section" style="display:none;">
-      <h2>📊 Game History</h2>
+      <h2>📊 Bislang gespielte Runden</h2>
       <div id="history-list"></div>
       <div id="round-details"></div>
-      <button onclick="goBackToResults()">← Back to Results</button>
+      <button onclick="goBackToResults()">← zurück</button>
     </section>
   </main>
 
