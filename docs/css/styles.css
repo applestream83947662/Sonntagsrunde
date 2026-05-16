@@ -220,23 +220,15 @@ table tr:hover {
 }
 
 table th:nth-child(1) {
-  width: 8%;
+  width: 50%;
 }
 
 table th:nth-child(2) {
-  width: 35%;
+  width: 25%;
 }
 
 table th:nth-child(3) {
-  width: 15%;
-}
-
-table th:nth-child(4) {
-  width: 20%;
-}
-
-table th:nth-child(5) {
-  width: 22%;
+  width: 25%;
 }
 
 table td input {
@@ -251,4 +243,95 @@ table td input {
 table td input:focus {
   outline: none;
   border-color: #a78bfa;
+}
+
+/* Player Selector Styles */
+.player-selector {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 3px solid #a78bfa;
+}
+
+.player-selector label {
+  color: #c4b5fd;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.player-input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.player-dropdown {
+  flex: 1;
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #7c3aed;
+  border-radius: 4px;
+  color: #e0e0e0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.player-dropdown:focus {
+  outline: none;
+  border-color: #a78bfa;
+  box-shadow: 0 0 8px rgba(124, 58, 237, 0.4);
+}
+
+.player-dropdown option {
+  background-color: #302b63;
+  color: #e0e0e0;
+}
+
+.player-custom-input {
+  flex: 1;
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid #7c3aed;
+  border-radius: 4px;
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+
+.player-custom-input:focus {
+  outline: none;
+  border-color: #a78bfa;
+  box-shadow: 0 0 8px rgba(124, 58, 237, 0.4);
+}
+
+.default-names-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.5rem;
+}
+
+.name-card {
+  padding: 0.6rem 0.8rem;
+  background-color: rgba(124, 58, 237, 0.3);
+  border: 2px solid #7c3aed;
+  border-radius: 6px;
+  color: #c4b5fd;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.name-card:hover {
+  background-color: rgba(124, 58, 237, 0.6);
+  border-color: #a78bfa;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(124, 58, 237, 0.4);
+}
+
+.name-card:active {
+  background-color: rgba(124, 58, 237, 0.8);
+  transform: translateY(0);
 }

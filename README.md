@@ -18,7 +18,7 @@ A lightweight, browser-based disc golf score tracking application designed for l
 
 ```
 Sonntagsrunde/
-├── src/
+├── docs/
 │   ├── index.html          # Main application
 │   ├── js/
 │   │   └── main.js         # Core logic & data persistence
