@@ -107,6 +107,9 @@ class GameDatabase {
 
 const db = new GameDatabase();
 
+// ==================== DEFAULT PLAYER NAMES ====================
+const DEFAULT_PLAYER_NAMES = ["Philipp", "Basti", "Swen", "Thomas", "Michael", "BastiHe"];
+
 // ==================== ROUND DATA ====================
 let roundData = {
   id: null,
@@ -145,18 +148,56 @@ function setupPlayers() {
   playersInput.innerHTML = '';
   
   for (let i = 0; i < numPlayers; i++) {
+    const options = DEFAULT_PLAYER_NAMES.map(name => `<option value="${name}">${name}</option>`).join('');
     playersInput.innerHTML += `
-      <div class="form-group">
-        <label for="player-${i}">Player ${i + 1} Name:</label>
-        <input type="text" id="player-${i}" placeholder="Enter name">
+      <div class="form-group player-selector">
+        <label for="player-${i}">Spieler ${i + 1}:</label>
+        <div class="player-input-group">
+          <select id="player-${i}" class="player-dropdown" onchange="togglePlayerCustomInput(${i})">
+            <option value="">-- Wählen Sie einen Namen --</option>
+            ${options}
+            <option value="custom">-- Eigene eingeben --</option>
+          </select>
+          <input type="text" id="player-custom-${i}" class="player-custom-input" placeholder="Eigener Name..." style="display: none;">
+        </div>
+        <div class="default-names-cards">
+          ${DEFAULT_PLAYER_NAMES.map(name => `<button type="button" class="name-card" onclick="selectPlayerName(${i}, '${name}')">${name}</button>`).join('')}
+        </div>
       </div>
     `;
   }
 }
 
+function selectPlayerName(playerIdx, name) {
+  document.getElementById(`player-${playerIdx}`).value = name;
+  document.getElementById(`player-custom-${playerIdx}`).style.display = 'none';
+}
+
+function togglePlayerCustomInput(playerIdx) {
+  const dropdown = document.getElementById(`player-${playerIdx}`);
+  const customInput = document.getElementById(`player-custom-${playerIdx}`);
+  
+  if (dropdown.value === 'custom') {
+    customInput.style.display = 'block';
+    customInput.focus();
+  } else {
+    customInput.style.display = 'none';
+  }
+}
+
 function setupCourses() {
   for (let i = 0; i < roundData.players.length; i++) {
-    const name = document.getElementById(`player-${i}`).value.trim();
+    const dropdown = document.getElementById(`player-${i}`);
+    let name = '';
+    
+    if (dropdown.value === 'custom') {
+      // Use custom input if selected
+      name = document.getElementById(`player-custom-${i}`).value.trim();
+    } else {
+      // Use dropdown selection
+      name = dropdown.value.trim();
+    }
+    
     if (!name) {
       alert(`Spielernamen eingeben: ${i + 1}`);
       return;
@@ -315,28 +356,31 @@ function displayCourse() {
     <p><strong>Par:</strong> ${course.par} | <strong>Length:</strong> ${course.length}m</p>
   `;
   
+  // Calculate cumulative par for holes played (excluding current hole)
+  const cumulativePar = roundData.courses.slice(0, roundData.currentCourse).reduce((sum, c) => sum + c.par, 0);
+  
   const scoringTable = document.getElementById('scoring-table');
-  let html = '<table><tr><th>Rank</th><th>Player</th><th>Throws</th><th>vs Par</th><th>Total</th></tr>';
+  let html = '<table><tr><th>Player</th><th>Throws</th><th>Total</th></tr>';
   
   const standings = calculateStandingsForDisplay();
   
   for (let standing of standings) {
     const playerIdx = standing.idx;
     const score = roundData.scores[playerIdx][roundData.currentCourse];
-    const vsParThisHole = score ? score - course.par : 0;
-    const vsParSymbol = score ? (vsParThisHole > 0 ? '+' : vsParThisHole < 0 ? '-' : '±') : '-';
-    const vsParDisplay = score ? Math.abs(vsParThisHole) : '-';
+    
+    // Calculate cumulative vs par for this player (excluding current hole)
+    const cumulativeScore = roundData.scores[playerIdx].slice(0, roundData.currentCourse).reduce((a, b) => a + b, 0);
+    const cumulativeVsPar = cumulativeScore - cumulativePar;
+    const vsParSymbol = cumulativeVsPar > 0 ? '+' : cumulativeVsPar < 0 ? '' : '';
+    const playerDisplayName = cumulativeVsPar === 0 ? `${roundData.players[playerIdx]} (E)` : `${roundData.players[playerIdx]} (${vsParSymbol}${cumulativeVsPar})`;
+
     
     html += `
       <tr>
-        <td><strong>${standing.position}</strong></td>
-        <td>${roundData.players[playerIdx]}</td>
+        <td>${playerDisplayName}</td>
         <td>
           <input type="number" id="score-${playerIdx}" min="1" value="${score || ''}" 
                  onchange="updateScore(${playerIdx}, ${roundData.currentCourse})">
-        </td>
-        <td class="vs-par ${score && vsParThisHole > 0 ? 'over-par' : score && vsParThisHole < 0 ? 'under-par' : score && vsParThisHole === 0 ? 'even-par' : ''}">
-          ${vsParSymbol}${vsParDisplay}
         </td>
         <td><strong>${standing.total}</strong></td>
       </tr>
@@ -453,15 +497,22 @@ function showResults() {
 }
 
 function displayStandings(elementId, isFinal = false) {
+  // Determine how many holes to include in the calculation
+  let holesToInclude = roundData.courses.length;
+  if (!isFinal) {
+    // For halftime, include holes up to and including currentCourse
+    holesToInclude = roundData.currentCourse + 1;
+  }
+  
   const standings = roundData.players.map((name, idx) => {
-    const total = roundData.scores[idx].reduce((a, b) => a + b, 0);
+    const total = roundData.scores[idx].slice(0, holesToInclude).reduce((a, b) => a + b, 0);
     return { name, idx, total };
   }).sort((a, b) => a.total - b.total);
   
   const element = document.getElementById(elementId);
   let html = '<table><tr><th>Position</th><th>Player</th><th>Total Throws</th><th>vs Par</th></tr>';
   
-  const totalPar = roundData.courses.reduce((sum, course) => sum + course.par, 0);
+  const totalPar = roundData.courses.slice(0, holesToInclude).reduce((sum, course) => sum + course.par, 0);
   
   standings.forEach((player, position) => {
     const medal = position === 0 ? '🥇' : position === 1 ? '🥈' : position === 2 ? '🥉' : '';
