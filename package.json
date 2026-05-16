@@ -1,0 +1,30 @@
+{
+  "name": "sonntagsrunde",
+  "version": "1.0.0",
+  "description": "Live disc golf score tracker with history and data persistence",
+  "main": "src/js/main.js",
+  "scripts": {
+    "start": "live-server src",
+    "test": "echo 'No tests specified'",
+    "build": "echo 'Build step (for future use)'"
+  },
+  "keywords": [
+    "disc-golf",
+    "score-tracker",
+    "live-scoring",
+    "leaderboard"
+  ],
+  "author": "Philipp Möller",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/Sonntagsrunde.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
