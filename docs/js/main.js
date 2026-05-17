@@ -316,6 +316,7 @@ function loadCourseFile() {
         
         document.getElementById('load-course').style.display = 'none';
         document.getElementById('scoring-section').style.display = 'block';
+        document.getElementById('header-actions').classList.add('hidden-during-play');
         document.getElementById('total-courses').textContent = roundData.courses.length;
         
         roundData.currentCourse = 0;
@@ -341,6 +342,7 @@ function startRound() {
   
   document.getElementById('courses-setup').style.display = 'none';
   document.getElementById('scoring-section').style.display = 'block';
+  document.getElementById('header-actions').classList.add('hidden-during-play');
   document.getElementById('total-courses').textContent = roundData.courses.length;
   
   roundData.currentCourse = 0;
@@ -459,6 +461,7 @@ function nextCourse() {
 function showHalftime() {
   document.getElementById('scoring-section').style.display = 'none';
   document.getElementById('halftime-section').style.display = 'block';
+  document.getElementById('header-actions').classList.add('hidden-during-play');
   
   displayStandings('halftime-standings');
 }
@@ -466,6 +469,7 @@ function showHalftime() {
 function continueRound() {
   document.getElementById('halftime-section').style.display = 'none';
   document.getElementById('scoring-section').style.display = 'block';
+  document.getElementById('header-actions').classList.add('hidden-during-play');
   
   roundData.currentCourse++;
   displayCourse();
@@ -474,6 +478,7 @@ function continueRound() {
 function showResults() {
   document.getElementById('scoring-section').style.display = 'none';
   document.getElementById('results-section').style.display = 'block';
+  document.getElementById('header-actions').classList.remove('hidden-during-play');
   
   displayStandings('final-standings', true);
   
@@ -715,6 +720,7 @@ function resetTracker() {
   document.getElementById('halftime-section').style.display = 'none';
   document.getElementById('results-section').style.display = 'none';
   document.getElementById('history-section').style.display = 'none';
+  document.getElementById('header-actions').classList.remove('hidden-during-play');
   
   document.getElementById('round-date').valueAsDate = new Date();
   document.getElementById('course-file').value = '';
