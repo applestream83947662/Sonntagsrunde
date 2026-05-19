@@ -360,7 +360,7 @@ function displayCourse() {
   const cumulativePar = roundData.courses.slice(0, roundData.currentCourse).reduce((sum, c) => sum + c.par, 0);
   
   const scoringTable = document.getElementById('scoring-table');
-  let html = '<table><tr><th>Player</th><th>Throws</th><th>Total</th></tr>';
+  let html = '<table><tr><th>Spieler</th><th>Würfe/th><th>Gesamt</th></tr>';
   
   const standings = calculateStandingsForDisplay();
   
@@ -394,11 +394,11 @@ function displayCourse() {
   const isLastCourse = roundData.currentCourse === roundData.courses.length - 1;
   
   if (isHalftime) {
-    nextBtn.textContent = 'Halftime Standing →';
+    nextBtn.textContent = 'Halbzeit;
   } else if (isLastCourse) {
-    nextBtn.textContent = 'See Results →';
+    nextBtn.textContent = 'Zwischenstand';
   } else {
-    nextBtn.textContent = 'Next →';
+    nextBtn.textContent = 'Weiter';
   }
 }
 
