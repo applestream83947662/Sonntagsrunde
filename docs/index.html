@@ -10,12 +10,16 @@
   <header>
     <h1>⛳ Disc Golf Sonntagsrunde</h1>
     <p>von Philipp</p>
-    <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+    <div id="header-actions" style="margin-top: 1rem; display: flex; gap: 1rem; align-items: center;">
       <button onclick="exportGameData()" title="Download all data as JSON">📥 Export</button>
       <label style="cursor: pointer; color: #e0e0e0;">
         📤 Import
         <input type="file" id="import-file-input" accept=".json" style="display: none;">
       </label>
+      <div id="language-switcher" style="display: flex; gap: 0.5rem; margin-left: auto;">
+        <button id="lang-de" onclick="setLanguage('de')" style="padding: 0.5rem 0.8rem; min-width: 50px; background-color: #a78bfa; color: #ffffff; border: 1px solid #a78bfa; border-radius: 4px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">🇩🇪 DE</button>
+        <button id="lang-en" onclick="setLanguage('en')" style="padding: 0.5rem 0.8rem; min-width: 50px; background-color: rgba(124, 58, 237, 0.7); color: #e0e0e0; border: 1px solid #a78bfa; border-radius: 4px; cursor: pointer; font-weight: 500; transition: all 0.3s ease;">🇬🇧 EN</button>
+      </div>
     </div>
   </header>
 

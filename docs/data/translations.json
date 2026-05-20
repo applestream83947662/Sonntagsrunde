@@ -1,0 +1,226 @@
+{
+  "de": {
+    "header": {
+      "title": "⛳ Disc Golf Sonntagsrunde",
+      "subtitle": "von Philipp",
+      "export": "📥 Export",
+      "import": "📤 Import",
+      "export_title": "Alle Daten als JSON herunterladen"
+    },
+    "round_setup": {
+      "heading": "Neue Runde",
+      "label_date": "Datum:",
+      "label_players": "Anzahl Spieler:",
+      "label_courses": "Anzahl Bahnen:",
+      "button_next": "Spieler erstellen"
+    },
+    "players_setup": {
+      "heading": "Spieler Name:",
+      "label_player": "Spieler",
+      "placeholder_name": "Namen eingeben",
+      "button_next": "Kurseinstellung",
+      "error_name_required": "Spielernamen eingeben:"
+    },
+    "course_selection": {
+      "heading": "Kurseinstellung",
+      "button_new": "neuer Kurs",
+      "button_load": "Kurs laden..."
+    },
+    "courses_setup": {
+      "heading": "neue Kursdetails",
+      "label_hole": "Bahn",
+      "label_par": "Par:",
+      "label_length": "Länge (m):",
+      "button_back": "← Zurück",
+      "button_start": "Starte Runde..."
+    },
+    "load_course": {
+      "heading": "Kurs laden...",
+      "label_file": "Auswahl:",
+      "preview_title": "Kurs Vorschau",
+      "preview_name": "Name:",
+      "table_hole": "Bahn",
+      "table_par": "Par",
+      "table_length": "Länge (m)",
+      "button_back": "← Zurück",
+      "button_load": "Kurs laden",
+      "error_select": "Bitte wählen Sie eine Datei",
+      "error_invalid": "Ungültige JSON Datei",
+      "error_format": "Ungültige Kursformat",
+      "error_loading": "Fehler beim Laden der Datei:"
+    },
+    "save_course": {
+      "heading": "Kurs speichern",
+      "label_name": "Kurs Name:",
+      "placeholder_name": "geb mir einen Namen...",
+      "button_cancel": "Abbruch",
+      "button_save": "Kurs speichern",
+      "error_name": "Bitte geben Sie einen Kursnamen ein"
+    },
+    "scoring": {
+      "heading": "Bahn:",
+      "of": "von",
+      "label_par": "Par:",
+      "label_length": "Länge:",
+      "table_player": "Spieler",
+      "table_throws": "Würfe",
+      "table_total": "Gesamt",
+      "button_previous": "← Letzte",
+      "button_next": "Nächste →",
+      "button_halftime": "Halftime Standing →",
+      "button_results": "Ergebnisse anzeigen →"
+    },
+    "halftime": {
+      "heading": "⏸️ Halbzeit",
+      "button_continue": "Weiter geht's"
+    },
+    "results": {
+      "heading": "🏆 Endstand",
+      "table_position": "Position",
+      "table_player": "Spieler",
+      "table_total": "Gesamt Würfe",
+      "table_vs_par": "vs Par",
+      "button_history": "📊 Historie...",
+      "button_new_round": "Neue Runde",
+      "button_save_course": "Kurs speichern",
+      "label_date": "Datum:"
+    },
+    "history": {
+      "heading": "📊 Bislang gespielte Runden",
+      "table_date": "Datum",
+      "table_players": "Spieler",
+      "table_winner": "Gewinner",
+      "table_score": "Punkte",
+      "table_action": "Aktion",
+      "button_view": "Ansehen",
+      "button_back": "← zurück",
+      "leaderboard": "Rangliste",
+      "hole_breakdown": "Bahn nach Bahn Übersicht",
+      "no_rounds": "Noch keine Runden aufgezeichnet.",
+      "medal_first": "🥇",
+      "medal_second": "🥈",
+      "medal_third": "🥉"
+    },
+    "common": {
+      "alert_error": "Fehler",
+      "alert_success": "Erfolg",
+      "button_ok": "OK",
+      "button_cancel": "Abbruch",
+      "vs_par_even": "E",
+      "vs_par_plus": "+",
+      "vs_par_minus": "-"
+    }
+  },
+  "en": {
+    "header": {
+      "title": "⛳ Disc Golf Sunday Round",
+      "subtitle": "by Philipp",
+      "export": "📥 Export",
+      "import": "📤 Import",
+      "export_title": "Download all data as JSON"
+    },
+    "round_setup": {
+      "heading": "New Round",
+      "label_date": "Date:",
+      "label_players": "Number of Players:",
+      "label_courses": "Number of Holes:",
+      "button_next": "Create Players"
+    },
+    "players_setup": {
+      "heading": "Player Names:",
+      "label_player": "Player",
+      "placeholder_name": "Enter name",
+      "button_next": "Course Setup",
+      "error_name_required": "Enter player name:"
+    },
+    "course_selection": {
+      "heading": "Course Setup",
+      "button_new": "New Course",
+      "button_load": "Load Course..."
+    },
+    "courses_setup": {
+      "heading": "Course Details",
+      "label_hole": "Hole",
+      "label_par": "Par:",
+      "label_length": "Length (m):",
+      "button_back": "← Back",
+      "button_start": "Start Round..."
+    },
+    "load_course": {
+      "heading": "Load Course...",
+      "label_file": "Select:",
+      "preview_title": "Course Preview",
+      "preview_name": "Name:",
+      "table_hole": "Hole",
+      "table_par": "Par",
+      "table_length": "Length (m)",
+      "button_back": "← Back",
+      "button_load": "Load Course",
+      "error_select": "Please select a file",
+      "error_invalid": "Invalid JSON file",
+      "error_format": "Invalid course format",
+      "error_loading": "Error loading file:"
+    },
+    "save_course": {
+      "heading": "Save Course",
+      "label_name": "Course Name:",
+      "placeholder_name": "Give me a name...",
+      "button_cancel": "Cancel",
+      "button_save": "Save Course",
+      "error_name": "Please enter a course name"
+    },
+    "scoring": {
+      "heading": "Hole:",
+      "of": "of",
+      "label_par": "Par:",
+      "label_length": "Length:",
+      "table_player": "Player",
+      "table_throws": "Throws",
+      "table_total": "Total",
+      "button_previous": "← Previous",
+      "button_next": "Next →",
+      "button_halftime": "Halftime Standing →",
+      "button_results": "See Results →"
+    },
+    "halftime": {
+      "heading": "⏸️ Halftime",
+      "button_continue": "Continue"
+    },
+    "results": {
+      "heading": "🏆 Final Results",
+      "table_position": "Position",
+      "table_player": "Player",
+      "table_total": "Total Throws",
+      "table_vs_par": "vs Par",
+      "button_history": "📊 History...",
+      "button_new_round": "New Round",
+      "button_save_course": "Save Course",
+      "label_date": "Date:"
+    },
+    "history": {
+      "heading": "📊 Played Rounds",
+      "table_date": "Date",
+      "table_players": "Players",
+      "table_winner": "Winner",
+      "table_score": "Score",
+      "table_action": "Action",
+      "button_view": "View",
+      "button_back": "← Back",
+      "leaderboard": "Leaderboard",
+      "hole_breakdown": "Hole-by-Hole Breakdown",
+      "no_rounds": "No rounds recorded yet.",
+      "medal_first": "🥇",
+      "medal_second": "🥈",
+      "medal_third": "🥉"
+    },
+    "common": {
+      "alert_error": "Error",
+      "alert_success": "Success",
+      "button_ok": "OK",
+      "button_cancel": "Cancel",
+      "vs_par_even": "E",
+      "vs_par_plus": "+",
+      "vs_par_minus": "-"
+    }
+  }
+}
