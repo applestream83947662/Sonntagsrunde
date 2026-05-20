@@ -360,7 +360,7 @@ function displayCourse() {
   const cumulativePar = roundData.courses.slice(0, roundData.currentCourse).reduce((sum, c) => sum + c.par, 0);
   
   const scoringTable = document.getElementById('scoring-table');
-  let html = '<table><tr><th>Spieler</th><th>Würfe/th><th>Gesamt</th></tr>';
+  let html = '<table><tr><th>Spieler</th><th>Würfe</th><th>Gesamt</th></tr>';
   
   const standings = calculateStandingsForDisplay();
   
